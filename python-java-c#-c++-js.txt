@@ -1,5 +1,33 @@
-python
-java
-c#
-c++
-javascript
+python - java - c# - c++ - javascript
+
+python类中要def ‘self’
+for i in range(1, len(nums)):
+
+java和C#很像
+Java
+public static void main(String[] args) { }
+// String[] args
+
+C#首字母要大写，命名法区别
+C#
+public static void Main() { }
+// string[] args
+
+C++最后};
+C++<vector>
+C++vector<int>&string[] args
+
+C++
+for (int i = 1; i < nums.size(); i++) {
+
+C++
+#include <vector>
+using namespace std;
+class Solution {
+    public:
+C++
+int main() { }
+// int argc, char* argv[]
+
+JavaScript!==和===表示严格相等，不会转换数据类型
+(i < k - 1 ? ", " : "") 三元运算符(条件 ? 值1 : 值2)

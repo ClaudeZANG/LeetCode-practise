@@ -65,6 +65,7 @@
 
 # ------------------------------------------------------------
 
+# 27. Remove Element
 # Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
 # Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
@@ -88,8 +89,6 @@
 #     assert nums[i] == expectedNums[i];
 # }
 # If all assertions pass, then your solution will be accepted.
-
- 
 
 # Example 1:
 
@@ -122,9 +121,20 @@
 #                 k += 1
 #         return k
 
+# re-write 2025/Feb/24
+# class Solution:
+#     def removeElement(self, nums, val):
+#         k = 0
+#         for i in range(len(nums)):
+#             if nums[i] != val:
+#                 nums[k] = nums[i]
+#                 k += 1
+#         return k
+
 
 # -------------------------------------------
 
+# 26. Remove Duplicates from Sorted Array
 # Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
 # Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
@@ -158,8 +168,6 @@
 # }
 # If all assertions pass, then your solution will be accepted.
 
- 
-
 # Example 1:
 
 # Input: nums = [1,1,2]
@@ -177,7 +185,6 @@
 
 # Note that the five elements can be returned in any order.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 # Constraints:
 
@@ -197,12 +204,22 @@
 #         return k + 1
 
 
+# re-write 2025/Feb/24
+# class Solution:
+#     def removeDuplicates(self, nums):
+#         k = 0
+#         for i in range(1, len(nums)):
+#             if nums[i] != nums[k]:
+#                 k += 1
+#                 nums[k] = nums[i]
+#         return k + 1
+
+
 # -----------------------------------------------
 
 # 80. Remove Duplicates from Sorted Array II
 # Medium
-# Topics
-# Companies
+
 # Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.
 
 # Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
@@ -213,8 +230,6 @@
 
 # Custom Judge:
 
-# The judge will test your solution with the following code:
-
 # int[] nums = [...]; // Input array
 # int[] expectedNums = [...]; // The expected answer with correct length
 
@@ -224,9 +239,7 @@
 # for (int i = 0; i < k; i++) {
 #     assert nums[i] == expectedNums[i];
 # }
-# If all assertions pass, then your solution will be accepted.
-
- 
+# If all assertions pass, then your solution will be accepted. 
 
 # Example 1:
 
@@ -241,13 +254,11 @@
 # Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
  
-
 # Constraints:
 
 # 1 <= nums.length <= 3 * 104
 # -104 <= nums[i] <= 104
 # nums is sorted in non-decreasing order.
-
 
 # class Solution(object):
 #     def removeDuplicates(self, nums):
@@ -258,8 +269,18 @@
 #                 nums[k] = nums[i]
 #                 k += 1
 
-#         return k              
+#         return k
 
+
+# re-write 2025/Feb/24      
+# class Solution:
+#     def removeDuplicates(self, nums):
+#         k = 2
+#         for i in range(2, len(nums)):
+#             if nums[i] != nums[k - 2]:
+#                 nums[k] = nums[i] # put to k position
+#                 k += 1
+#         return k
 
 # ------------------------------------------------------------
 

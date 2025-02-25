@@ -145,9 +145,24 @@
 //     }
 // }
 
+// re-write 2025/Feb/24
+// public class Solution {
+//     public int removeElement(int[] nums, int val) {
+//         int k = 0;
+//         for (int i = 0; i < nums.length; i++) {
+//             if (nums[i] != val) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// }
+
 
 // # -------------------------------------------
 
+// 26. Remove Duplicates from Sorted Array
 // # Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
 // # Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
@@ -181,8 +196,6 @@
 // # }
 // # If all assertions pass, then your solution will be accepted.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [1,1,2]
@@ -201,7 +214,6 @@
 // # Note that the five elements can be returned in any order.
 // # It does not matter what you leave beyond the returned k (hence they are underscores).
  
-
 // # Constraints:
 
 // # 1 <= nums.length <= 3 * 104
@@ -216,6 +228,20 @@
 //             if (nums[i] != nums[k]) {
 //                 k++;
 //                 nums[k] = nums[i]; 
+//             }
+//         }
+//         return k + 1;
+//     }
+// }
+
+// re-write 2025/Feb/24
+// public class Solution {
+//     public int removeDuplicates(int[] nums) {
+//         int k = 0;
+//         for (int i = 1; i < nums.length; i++) {
+//             if (nums[i] != nums[k]) {
+//                 k++;
+//                 nums[k] = nums[i];
 //             }
 //         }
 //         return k + 1;
@@ -251,8 +277,6 @@
 // # }
 // # If all assertions pass, then your solution will be accepted.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [1,1,1,2,2,3]
@@ -266,15 +290,27 @@
 // # Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 // # It does not matter what you leave beyond the returned k (hence they are underscores).
  
-
 // # Constraints:
 
 // # 1 <= nums.length <= 3 * 104
 // # -104 <= nums[i] <= 104
 // # nums is sorted in non-decreasing order.
 
-
 // public class Solution {
+//     public int removeDuplicates(int[] nums) {
+//         int k = 2;
+//         for (int i = 2; i < nums.length; i++) {
+//             if (nums[i] != nums[k - 2]) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// }
+
+// re-write 2025/Feb/24
+// public class Solution{
 //     public int removeDuplicates(int[] nums) {
 //         int k = 2;
 //         for (int i = 2; i < nums.length; i++) {

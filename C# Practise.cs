@@ -100,8 +100,6 @@
 // }
 // If all assertions pass, then your solution will be accepted.
 
- 
-
 // Example 1:
 
 // Input: nums = [3,2,2,3], val = 3
@@ -140,8 +138,23 @@
 // 		}
 // }
 
+// re-write 2025/Feb/24
+// public class Solution {
+// 	public int RemoveElement(int[] nums, int val) {
+// 		int k = 0;
+// 		for (int i = 0; i < nums.Length; i++) {
+// 			if (nums[i] != val) {
+// 				nums[k] = nums[i];
+// 				k++;
+// 			}
+// 		}
+// 		return k;
+// 	}
+// }
+
 // # -------------------------------------------
 
+// 26. Remove Duplicates from Sorted Array
 // # Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
 // # Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
@@ -175,8 +188,6 @@
 // # }
 // # If all assertions pass, then your solution will be accepted.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [1,1,2]
@@ -195,18 +206,30 @@
 // # Note that the five elements can be returned in any order.
 // # It does not matter what you leave beyond the returned k (hence they are underscores).
  
-
 // # Constraints:
 
 // # 1 <= nums.length <= 3 * 104
 // # -100 <= nums[i] <= 100
 // # nums is sorted in non-decreasing order.
 
-
 // using System;
-
 // public class Solution {
 // 	public int RemoveDuplicates(int[] nums) {
+// 		int k = 0;
+// 		for (int i = 1; i < nums.Length; i++) {
+// 			if (nums[i] != nums[k]) {
+// 				k++;
+// 				nums[k] = nums[i];
+// 			}
+// 		}
+// 		return k + 1;
+// 	}
+// }
+
+// re-write 2025/Feb/24
+// public class Solution {
+// 	public int RemoveDuplicates(int[] nums) {
+// 		if (nums.Length == 0) return 0; // for null array
 // 		int k = 0;
 // 		for (int i = 1; i < nums.Length; i++) {
 // 			if (nums[i] != nums[k]) {
@@ -247,8 +270,6 @@
 // # }
 // # If all assertions pass, then your solution will be accepted.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [1,1,1,2,2,3]
@@ -261,14 +282,12 @@
 // # Output: 7, nums = [0,0,1,1,2,3,3,_,_]
 // # Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 // # It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 // # Constraints:
 
 // # 1 <= nums.length <= 3 * 104
 // # -104 <= nums[i] <= 104
 // # nums is sorted in non-decreasing order.
-
 
 // public class Solution {
 //     public int RemoveDuplicates(int[] nums) {
@@ -285,6 +304,21 @@
 //     }
 // }
 
+// re-write 2025/Feb/24
+// public class Solution {
+// 	public int RemoveDuplicates(int[] nums) {
+// 		if (nums.Length < 2) return nums.Length;  // Avoid out-of-bounds access for nums[k-2].
+
+// 		int k = 2;
+// 		for (int i = 2; i < nums.Length; i++) {
+// 			if (nums[i] != nums[k - 2]) {
+// 				nums[k] = nums[i];
+// 				k++;
+// 			}
+// 		}
+// 		return k;
+// 	}
+// }
 
 // # ------------------------------------------------------------
 
