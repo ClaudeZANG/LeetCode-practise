@@ -32,7 +32,6 @@
 // };
 
 // re-write 2025/Feb/22
-
 // #include <vector>
 // using namespace std;
 
@@ -69,6 +68,59 @@
 //     void merge(vector<int>& nums1, int m, const vector<int>& nums2, int n) {
 //         int p1 = m - 1, p2 = n - 1, p = m + n - 1;
 
+//         while (p1 >= 0 && p2 >= 0) {
+//             if (nums1[p1] > nums2[p2]) {
+//                 nums1[p] = nums1[p1];
+//                 p1--;
+//             } else {
+//                 nums1[p] = nums2[p2];
+//                 p2--;
+//             }
+//             p--;
+//         }
+
+//         while (p2 >= 0) {
+//             nums1[p] = nums2[p2];
+//             p2--;
+//             p--;
+//         }
+//     }
+// };
+
+// re-write 2025/Feb/25
+// #include <vector>
+// using namespace std;
+// class Solution {
+//     public:
+//     void merge(vector<int>& nums1, int m, const vector<int>& nums2, int n) {
+//         int p1 = m - 1, p2 = n - 1, p = m + n - 1;
+//         while (p1 >= 0 && p2 >= 0) {
+//             if (nums1[p1] > nums2[p2]) {
+//                 nums1[p] = nums1[p1];
+//                 p1--;
+//             } else {
+//                 nums1[p] = nums2[p2];
+//                 p2--;
+//             }
+//             p--;
+//         }
+        
+//         while (p2 >= 0) {
+//             nums1[p] = nums2[p2];
+//             p2--;
+//             p--;
+//         }
+//     }
+// };
+
+// re-write 2025/Feb/27
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     void merge(vector<int>& nums1, int m, const vector<int>& nums2, int n) {
+//         int p1 = m - 1, p2 = n - 1, p = m + n - 1;
 //         while (p1 >= 0 && p2 >= 0) {
 //             if (nums1[p1] > nums2[p2]) {
 //                 nums1[p] = nums1[p1];
@@ -167,6 +219,41 @@
 //     }
 // };
 
+// re-write 2025/Feb/25
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int removeElement(vector<int>& nums, int val) {
+//         int k = 0;
+//         for (int i = 0; i < nums.size(); ++i) {
+//             if (nums[i] != val) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// };
+
+// re-write 2025/Feb/27
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int removeElement(vector<int>& nums, int val) {
+//         int k = 0;
+//         for (int i = 0; i < nums.size(); ++i) {
+//             if (nums[i] != val) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// };
 
 // # -------------------------------------------
 
@@ -262,6 +349,42 @@
 //     }
 // };
 
+// re-write 2025/Feb/25
+// #include <vector>
+// using namespace std;
+// class Solution {
+//     public:
+//     int removeDuplicates(vector<int>& nums) {
+//         if (nums.empty()) return 0;        
+//         int k = 0;
+//         for (int i = 1; i < nums.size(); ++i) {
+//             if (nums[k] != nums[i]) {
+//                 k++;
+//                 nums[k] = nums[i];
+//             }
+//         }
+//         return k + 1;
+//     }
+// };
+
+// re-write 2025/Feb/27
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int removeDuplicates(vector<int>& nums) {
+//         int k = 0;
+//         for (int i = 1; i < nums.size(); ++i) {
+//             if (nums[k] != nums[i]) {
+//                 k++;
+//                 nums[k] = nums[i];
+//             }
+//         }
+//         return k + 1;
+//     }
+// };
+
 // # -----------------------------------------------
 
 // # 80. Remove Duplicates from Sorted Array II
@@ -291,8 +414,6 @@
 // # }
 // # If all assertions pass, then your solution will be accepted.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [1,1,1,2,2,3]
@@ -305,14 +426,12 @@
 // # Output: 7, nums = [0,0,1,1,2,3,3,_,_]
 // # Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 // # It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 // # Constraints:
 
 // # 1 <= nums.length <= 3 * 104
 // # -104 <= nums[i] <= 104
 // # nums is sorted in non-decreasing order.
-
 
 // #include <vector>
 // using namespace std;
@@ -351,6 +470,44 @@
 //     }
 // };
 
+// re-write 2025/Feb/25
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int removeDuplicates(vector<int>& nums) {
+//         if (nums.size() < 2) return nums.size();
+//         int k = 2;
+//         for (int i = 2; i < nums.size(); ++i){
+//             if (nums[i] != nums[k - 2]) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// };
+
+// re-write 2025/Feb/27
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int removeDuplicates(vector<int>& nums) {
+//         if (nums.size() < 2) return nums.size();
+//         int k = 2;
+//         for (int i = 2; i < nums.size(); ++i) {
+//             if (nums[i] != nums[k - 2]) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// };
+
 // # ------------------------------------------------------------
 
 // # 169. Majority Element
@@ -361,8 +518,6 @@
 
 // # The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [3,2,3]
@@ -371,14 +526,12 @@
 
 // # Input: nums = [2,2,1,1,1,2,2]
 // # Output: 2
- 
 
 // # Constraints:
 
 // # n == nums.length
 // # 1 <= n <= 5 * 104
 // # -109 <= nums[i] <= 109
-
 
 // #include <vector>
 // #include <algorithm>
@@ -391,10 +544,139 @@
 //     }
 // };
 
+// re-write 2025/Feb/25
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 1
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 2
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 3
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 4
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 5
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 6
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 7
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 8
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 9
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
+
+// re-write 2025/Feb/27 - 10
+// #include <vector>
+// using namespace std;
+
+// class Solution {
+//     public:
+//     int majorityElement(vector<int>& nums) {
+//         sort(nums.begin(), nums.end());
+//         return nums[nums.size() / 2];
+//     }
+// };
 
 // # ------------------------------------------
-
-
 
 // # 189. Rotate Array
 // # Medium
@@ -402,8 +684,6 @@
 // # Companies
 // # Hint
 // # Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
-
- 
 
 // # Example 1:
 
@@ -421,7 +701,6 @@
 // # rotate 1 steps to the right: [99,-1,-100,3]
 // # rotate 2 steps to the right: [3,99,-1,-100]
  
-
 // # Constraints:
 
 // # 1 <= nums.length <= 105

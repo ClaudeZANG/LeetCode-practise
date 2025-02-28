@@ -49,7 +49,6 @@
 //     }
 // }
 
-
 // re-write 2025/Feb/23
 // function merge(nums1, m, nums2, n) {
 //     let p1 = m - 1, p2 = n -1, p = m + n - 1;
@@ -72,6 +71,51 @@
 //     }
 // }
 
+// re-write 2025/Feb/25
+// function merge(nums1, m, nums2, n) {
+//     let p1 = m - 1, p2 = n - 1, p = m + n -1;
+
+//     while (p1 >= 0 && p2 >= 0) {
+//         if (nums1[p1] > nums2[p2]) {
+//             nums1[p] = nums1[p1];
+//             p1--;
+//         } else {
+//             nums1[p] = nums2[p2];
+//             p2--;
+//         }
+//         p--;
+//     }
+
+//     while (p2 >= 0) {
+//         nums1[p] = nums2[p2];
+//         p2--;
+//         p--;
+//     }
+// }
+
+// re-write 2025/Feb/27
+// function merge(nums1, m, nums2, n) {
+//     let p1 = m - 1;
+//     let p2 = n - 1;
+//     let p = m + n - 1;
+
+//     while (p1 >= 0 && p2 >= 0) {
+//         if (nums1[p1] > nums2[p2]) {
+//             nums1[p] = nums1[p1];
+//             p1--;
+//         } else {
+//             nums1[p] = nums2[p2];
+//             p2--;
+//         }
+//         p--;
+//     }
+
+//     while (p2 >= 0) {
+//         nums1[p] = nums2[p2];
+//         p2--;
+//         p--;
+//     }
+// }
 
 // ------------------------------------------------------------
 
@@ -112,7 +156,6 @@
 // Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 // Note that the five elements can be returned in any order.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 // Constraints:
 
@@ -143,6 +186,29 @@
 //     return k;
 // }
 
+// re-write 2025/Feb/25
+// function removeElement(nums, val) {
+//     let k = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] != val) {
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+//     return k;
+// }
+
+// re-write 2025/Feb/27
+// function removeElement(nums, val) {
+//     let k = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== val) {
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+//     return k;
+// }
 
 // # -------------------------------------------
 
@@ -229,6 +295,31 @@
 //     return k + 1;
 // }
 
+// re-write 2025/Feb/25
+// function removeDuplicates(nums) {
+//     if (nums.length === 0) return 0;
+//     let k = 0;
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[k] != nums[i]) {
+//             k++;
+//             nums[k] = nums[i];
+//         }
+//     }
+//     return k + 1;
+// }
+
+// re-write 2025/Feb/27
+// function removeDuplicates(nums) {
+//     let k = 0;
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[k] !== nums[i]) {
+//             k++;
+//             nums[k] = nums[i];
+//         }
+//     }
+//     return k + 1;
+// }
+
 // # -----------------------------------------------
 
 // # 80. Remove Duplicates from Sorted Array II
@@ -302,6 +393,31 @@
 //     return k;
 // }
 
+// re-write 2025/Feb/25
+// function removeDuplicates(nums) {
+//     if (nums.length < 2) return nums.length;
+//     let k = 2;
+//     for (let i = 2; i < nums.length; i++) {
+//         if (nums[i] != nums[k - 2]) {
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+//     return k;
+// }
+
+// re-write 2025/Feb/27
+// function removeDuplicates(nums) {
+//     let k = 2;
+//     for (let i = 2; i < nums.length; i++) {
+//         if (nums[i] !== nums[k - 2]) {
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+//     return k;
+// }
+
 // # ------------------------------------------------------------
 
 // # 169. Majority Element
@@ -310,9 +426,7 @@
 // # Companies
 // # Given an array nums of size n, return the majority element.
 
-// # The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
-
- 
+// # The majority element is the element that appears more than n / 2 times. You may assume that the majority element always exists in the array.
 
 // # Example 1:
 
@@ -322,7 +436,6 @@
 
 // # Input: nums = [2,2,1,1,1,2,2]
 // # Output: 2
- 
 
 // # Constraints:
 
@@ -330,17 +443,72 @@
 // # 1 <= n <= 5 * 104
 // # -109 <= nums[i] <= 109
 
-
-
 // function majorityElement(nums) {
-//     nums.sort((a, b) => a - b); // 数值排序
-//     return nums[Math.floor(nums.length / 2)]; // 返回中间元素
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
 // }
 
+// re-write 2025/Feb/26
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 1
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 2
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 3
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 4
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 5
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 6
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 7
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 8
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+// re-write 2025/Feb/27 - 9
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b)
+//     return nums[Math.floor(nums.length / 2)];
+// }
 
 // # ------------------------------------------
-
-
 
 // # 189. Rotate Array
 // # Medium

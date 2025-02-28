@@ -1,8 +1,8 @@
-# # 1. You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+# 1. You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
-# # Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+# Merge nums1 and nums2 into a single array sorted in non-decreasing order.
 
-# # The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+# The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
 # class Solution:
 #     def merge(self, nums1, m, nums2, n):
@@ -62,6 +62,43 @@
 #             p2 -= 1
 #             p -= 1
 
+# re-write 2025/Feb/25
+# class Solution:
+#     def merge(self, nums1, m, nums2, n):
+#         p1, p2, p = m - 1, n - 1, m + n - 1
+        
+#         while p1 >= 0 and p2 >= 0:
+#             if nums1[p1] > nums2[p2]:
+#                 nums1[p] = nums1[p1]
+#                 p1 -= 1
+#             else:
+#                 nums1[p] = nums2[p2]
+#                 p2 -= 1
+#             p -= 1
+        
+#         while p2 >= 0:
+#             nums1[p] = nums2[p2]
+#             p2 -= 1
+#             p -= 1
+
+# re-write 2025/Feb/27
+# class Solution:
+#     def merge(self, nums1, m, nums2, n):
+#         p1, p2, p = m - 1, n - 1, m + n - 1
+
+#         while p1 >= 0 and p2 >= 0:
+#             if nums1[p1] > nums2[p2]:
+#                 nums1[p] = nums1[p1]
+#                 p1 -= 1
+#             else:
+#                 nums1[p] = nums2[p2]
+#                 p2 -= 1
+#             p -= 1
+        
+#         while p2 >= 0:
+#             nums1[p] = nums2[p2]
+#             p2 -= 1
+#             p -= 1
 
 # ------------------------------------------------------------
 
@@ -103,14 +140,12 @@
 # Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 # Note that the five elements can be returned in any order.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 # Constraints:
 
 # 0 <= nums.length <= 100
 # 0 <= nums[i] <= 50
 # 0 <= val <= 100
-
 
 # class Solution(object):
 #     def removeElement(self, nums, val):
@@ -131,6 +166,25 @@
 #                 k += 1
 #         return k
 
+# re-write 2025/Feb/25
+# class Solution:
+#     def removeElement(self, nums, val):
+#         k = 0
+#         for i in range(len(nums)):
+#             if nums[i] != val:
+#                 nums[k] = nums[i]
+#                 k += 1
+#         return k
+
+# re-write 2025/Feb/25
+# class Solution:
+#     def removeElement(self, nums, val):
+#         k = 0
+#         for i in range(len(nums)):
+#             if nums[i] != val:
+#                 nums[k] = nums[i]
+#                 k += 1
+#         return k
 
 # -------------------------------------------
 
@@ -192,7 +246,6 @@
 # -100 <= nums[i] <= 100
 # nums is sorted in non-decreasing order.
 
-
 # class Solution(object):
 #     def removeDuplicates(self, nums):
 #         k = 0
@@ -202,7 +255,6 @@
 #                 nums[k] = nums[i]                   
 
 #         return k + 1
-
 
 # re-write 2025/Feb/24
 # class Solution:
@@ -214,6 +266,25 @@
 #                 nums[k] = nums[i]
 #         return k + 1
 
+# re-write 2025/Feb/25
+# class Solution:
+#     def removeDuplicates(self, nums):
+#         k = 0
+#         for i in range(1, len(nums)):
+#             if nums[k] != nums[i]:
+#                 k += 1
+#                 nums[k] = nums[i]
+#         return k + 1 
+
+# re-write 2025/Feb/27
+# class Solution:
+#     def removeDuplicates(self, nums):
+#         k = 0
+#         for i in range(1, len(nums)):
+#             if nums[k] != nums[i]:
+#                 k += 1
+#                 nums[k] = nums[i]
+#         return k + 1
 
 # -----------------------------------------------
 
@@ -271,7 +342,6 @@
 
 #         return k
 
-
 # re-write 2025/Feb/24      
 # class Solution:
 #     def removeDuplicates(self, nums):
@@ -279,6 +349,26 @@
 #         for i in range(2, len(nums)):
 #             if nums[i] != nums[k - 2]:
 #                 nums[k] = nums[i] # put to k position
+#                 k += 1
+#         return k
+
+# re-write 2025/Feb/25
+# class Solution:
+#     def removeDuplicates(self, nums):
+#         k = 2
+#         for i in range(2, len(nums)):
+#             if nums[i] != nums[k - 2]:
+#                 nums[k] = nums[i]
+#                 k += 1
+#         return k
+
+# re-write 2025/Feb/27
+# class Solution:
+#     def removeDuplicates(self, nums):
+#         k = 2
+#         for i in range(2, len(nums)):
+#             if nums[i] != nums[k - 2]:
+#                 nums[k] = nums[i]
 #                 k += 1
 #         return k
 
@@ -290,46 +380,100 @@
 # Companies
 # Given an array nums of size n, return the majority element.
 
-# The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
-
- 
+# The majority element is the element that appears more than (n / 2) times. You may assume that the majority element always exists in the array.
 
 # Example 1:
-
 # Input: nums = [3,2,3]
 # Output: 3
-# Example 2:
 
+# Example 2:
 # Input: nums = [2,2,1,1,1,2,2]
 # Output: 2
- 
 
 # Constraints:
-
 # n == nums.length
 # 1 <= n <= 5 * 104
 # -109 <= nums[i] <= 109
-
 
 # class Solution:
 #     def majorityElement(self, nums):
 #         nums.sort()
 #         return nums[len(nums) // 2]
 
+# re-write 2025/Feb/25
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
 
+# re-write 2025/Feb/26 - 1
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/26 - 2
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -1
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -2
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -3
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -4
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -5
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -6
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -7
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
+# re-write 2025/Feb/27 -8
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
 
 # ------------------------------------------
-
-
 
 # 189. Rotate Array
 # Medium
 # Topics
 # Companies
 # Hint
-# Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
-
- 
+# Given an integer array nums, rotate the array to the right by k steps, where k is non-negative. 
 
 # Example 1:
 
@@ -347,7 +491,6 @@
 # rotate 1 steps to the right: [99,-1,-100,3]
 # rotate 2 steps to the right: [3,99,-1,-100]
  
-
 # Constraints:
 
 # 1 <= nums.length <= 105
@@ -373,8 +516,6 @@
 # You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
 # Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-
- 
 
 # Example 1:
 

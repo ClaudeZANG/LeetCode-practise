@@ -47,7 +47,7 @@
 // 			p--;
 // 		}
 // 	}
-// }111
+// }
 
 // re-write 2025/Feb/23
 // public class Solution{
@@ -73,6 +73,53 @@
 // 	}
 // }
 
+// re-write 2025/Feb/25
+// public class Solution {
+// 	public void Merge(int[] nums1, int m, int[] nums2, int n) {
+// 		int p1 = m - 1, p2 = n - 1, p = m + n -1;
+
+// 		while (p1 >= 0 && p2 >= 0) {
+// 			if (nums1[p1] > nums2[p2]) {
+// 				nums1[p] = nums1[p1];
+// 				p1--;
+// 			} else {
+// 				nums1[p] = nums2[p2];
+// 				p2--;
+// 			}
+// 			p--;
+// 		}
+
+// 		while (p2 >= 0) {
+// 			nums1[p] = nums2[p2];
+// 			p2--;
+// 			p--;
+// 		}
+// 	}
+// }
+
+// re-write 2025/Feb/27
+// public class Solution {
+// 	public void Merge(int[] nums1, int m, int[] nums2, int n) {
+// 		int p1 = m - 1, p2 = n - 1, p = m + n - 1;
+		
+// 		while (p1 >= 0 && p2 >= 0) {
+// 			if (nums1[p1] > nums2[p2]) {
+// 				nums1[p] = nums1[p1];
+// 				p1--;
+// 			} else {
+// 				nums1[p] = nums2[p2];
+// 				p2--;
+// 			}
+// 			p--;
+// 		}
+
+// 		while (p2 >= 0) {
+// 			nums1[p] = nums2[p2];
+// 			p2--;
+// 			p--;
+// 		}
+// 	}
+// }
 
 // -------------------------------------------------------------------
 
@@ -113,14 +160,12 @@
 // Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 // Note that the five elements can be returned in any order.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 // Constraints:
 
 // 0 <= nums.length <= 100
 // 0 <= nums[i] <= 50
 // 0 <= val <= 100
-
 
 // using System;
 // using System.Collections.Generic;
@@ -139,6 +184,34 @@
 // }
 
 // re-write 2025/Feb/24
+// public class Solution {
+// 	public int RemoveElement(int[] nums, int val) {
+// 		int k = 0;
+// 		for (int i = 0; i < nums.Length; i++) {
+// 			if (nums[i] != val) {
+// 				nums[k] = nums[i];
+// 				k++;
+// 			}
+// 		}
+// 		return k;
+// 	}
+// }
+
+// re-write 2025/Feb/25
+// public class Solution {
+// 	public int RemoveElement(int[] nums, int val) {
+// 		int k = 0;
+// 		for (int i = 0; i < nums.Length; i++) {
+// 			if (nums[i] != val) {
+// 				nums[k] = nums[i];
+// 				k++;
+// 			}
+// 		}
+// 		return k;
+// 	}
+// }
+
+// re-write 2025/Feb/27
 // public class Solution {
 // 	public int RemoveElement(int[] nums, int val) {
 // 		int k = 0;
@@ -241,6 +314,35 @@
 // 	}
 // }
 
+// re-write 2025/Feb/25
+// public class Solution {
+// 	public int RemoveDuplicates(int[] nums) {
+// 		if (nums.Length == 0) return 0;
+// 		int k = 0;
+// 		for (int i = 1; i < nums.Length; i++) {
+// 			if (nums[k] != nums[i]) {
+// 				k++;
+// 				nums[k] = nums[i];
+// 			}
+// 		}
+// 		return k + 1;
+// 	}
+// }
+
+// re-write 2025/Feb/27
+// public class Solution {
+// 	public int RemoveDuplicates(int[] nums) {
+// 		int k = 0;
+// 		for (int i = 1; i < nums.Length; i++) {
+// 			if (nums[i] != nums[k]) {
+// 				k++;
+// 				nums[k] = nums[i];
+// 			}
+// 		}
+// 		return k + 1;
+// 	}
+// }
+
 // # -----------------------------------------------
 
 // # 80. Remove Duplicates from Sorted Array II
@@ -320,6 +422,35 @@
 // 	}
 // }
 
+// re-write 2025/Feb/25
+// public class Solution {
+// 	public int RemoveDuplicates(int[] nums) {
+// 		if (nums.Length < 2) return nums.Length;
+// 		int k = 2;
+// 		for (int i = 2; i < nums.Length; i++) {
+// 			if (nums[i] != nums[k - 2]) {
+// 				nums[k] = nums[i];
+// 				k++;
+// 			}
+// 		}
+// 		return k;
+// 	}
+// }
+
+// re-write 2025/Feb/27
+// public class Solution {
+// 	public int RemoveDuplicates(int[] nums) {
+// 		int k = 2;
+// 		for (int i = 2; i < nums.Length; i++) {
+// 			if (nums[i] != nums[k - 2]) {
+// 				nums[k] = nums[i];
+// 				k++;
+// 			}
+// 		}
+// 		return k;
+// 	}
+// }
+
 // # ------------------------------------------------------------
 
 // # 169. Majority Element
@@ -328,9 +459,7 @@
 // # Companies
 // # Given an array nums of size n, return the majority element.
 
-// # The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
-
- 
+// # The majority element is the element that appears more than n / 2 times. You may assume that the majority element always exists in the array.
 
 // # Example 1:
 
@@ -340,7 +469,6 @@
 
 // # Input: nums = [2,2,1,1,1,2,2]
 // # Output: 2
- 
 
 // # Constraints:
 
@@ -355,10 +483,79 @@
 //     }
 // }
 
+// re-write 2025/Feb/25
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 1
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 2
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 3
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 4
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 5
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 6
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 7
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
+
+// re-write 2025/Feb/27 - 8
+// public class Solution {
+// 	public int MajorityElement(int[] nums) {
+// 		Array.Sort(nums);
+// 		return nums[nums.Length / 2];
+// 	}
+// }
 
 // # ------------------------------------------
-
-
 
 // # 189. Rotate Array
 // # Medium

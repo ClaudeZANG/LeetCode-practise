@@ -83,6 +83,58 @@
 //     }
 // }
 
+// re-write 2025/Feb/25
+// public class Solution {
+//     public void merge(int[] nums1, int m, int[] nums2, int n) {
+//         int p1 = m - 1;
+//         int p2 =  n - 1;
+//         int p =  m + n - 1;
+
+//         while (p1 >= 0 && p2 >= 0) {
+//             if (nums1[p1] > nums2[p2]) {
+//                 nums1[p] = nums1[p1];
+//                 p1--;
+//             } else {
+//                 nums1[p] = nums2[p2];
+//                 p2--;
+//             }
+//             p--;
+//         }
+
+//         while (p2 >= 0) {
+//             nums1[p] = nums2[p2];
+//             p2--;
+//             p--;
+//         }
+//     }
+// }
+
+// re-write 2025/Feb/27
+// public class Solution {
+//     public void merge(int[] nums1, int m, int[] nums2, int n) {
+//         int p1 = m - 1;
+//         int p2 = n - 1;
+//         int p = m + n - 1;
+
+//         while (p1 >= 0 && p2 >= 0) {
+//             if (nums1[p1] > nums2[p2]) {
+//                 nums1[p] = nums1[p1];
+//                 p1--;
+//             } else {
+//                 nums1[p] = nums2[p2];
+//                 p2--;
+//             }
+//             p--;
+//         }
+
+//         while (p2 >= 0) {
+//             nums1[p] = nums2[p2];
+//             p2--;
+//             p--;
+//         }
+//     }
+// }
+
 // ------------------------------------------------------------
 
 // Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
@@ -109,8 +161,6 @@
 // }
 // If all assertions pass, then your solution will be accepted.
 
- 
-
 // Example 1:
 
 // Input: nums = [3,2,2,3], val = 3
@@ -125,7 +175,6 @@
 // Note that the five elements can be returned in any order.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
  
-
 // Constraints:
 
 // 0 <= nums.length <= 100
@@ -146,6 +195,34 @@
 // }
 
 // re-write 2025/Feb/24
+// public class Solution {
+//     public int removeElement(int[] nums, int val) {
+//         int k = 0;
+//         for (int i = 0; i < nums.length; i++) {
+//             if (nums[i] != val) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// }
+
+// re-write 2025/Feb/25
+// public class Solution {
+//     public int removeElement(int[] nums, int val) {
+//         int k = 0;
+//         for (int i = 0; i < nums.length; i++) {
+//             if (nums[i] != val) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// }
+
+// re-write 2025/Feb/27
 // public class Solution {
 //     public int removeElement(int[] nums, int val) {
 //         int k = 0;
@@ -220,7 +297,6 @@
 // # -100 <= nums[i] <= 100
 // # nums is sorted in non-decreasing order.
 
-
 // public class Solution {
 //     public int removeDuplicates(int[] nums) {
 //         int k = 0;
@@ -240,6 +316,34 @@
 //         int k = 0;
 //         for (int i = 1; i < nums.length; i++) {
 //             if (nums[i] != nums[k]) {
+//                 k++;
+//                 nums[k] = nums[i];
+//             }
+//         }
+//         return k + 1;
+//     }
+// }
+
+// re-write 2025/Feb/25
+// public class Solution {
+//     public int removeDuplicates(int[] nums) {
+//         int k = 0;
+//         for (int i = 1; i < nums.length; i++) {
+//             if (nums[k] != nums[i]) {
+//                 k++;
+//                 nums[k] = nums[i];
+//             }
+//         }
+//         return k + 1;
+//     }
+// }
+
+// re-write 2025/Feb/27
+// public class Solution {
+//     public int removeDuplicates(int[] nums) {
+//         int k = 0;
+//         for (int i = 1; i < nums.length; i++) {
+//             if (nums[k] != nums[i]) {
 //                 k++;
 //                 nums[k] = nums[i];
 //             }
@@ -323,6 +427,34 @@
 //     }
 // }
 
+// re-write 2025/Feb/25
+// public class Solution {
+//     public int removeDuplicates(int[] nums) {
+//         int k = 2;
+//         for (int i = 2; i < nums.length; i++) {
+//             if (nums[i] != nums[k - 2]) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// }
+
+// re-write 2025/Feb/27
+// public class Solution {
+//     public int removeDuplicates(int[] nums) {
+//         int k = 2;
+//         for (int i = 2; i < nums.length; i++) {
+//             if (nums[i] != nums[k - 2]) {
+//                 nums[k] = nums[i];
+//                 k++;
+//             }
+//         }
+//         return k;
+//     }
+// }
+
 // # ------------------------------------------------------------
 
 // # 169. Majority Element
@@ -333,8 +465,6 @@
 
 // # The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
 
- 
-
 // # Example 1:
 
 // # Input: nums = [3,2,3]
@@ -343,7 +473,6 @@
 
 // # Input: nums = [2,2,1,1,1,2,2]
 // # Output: 2
- 
 
 // # Constraints:
 
@@ -352,19 +481,103 @@
 // # -109 <= nums[i] <= 109
 
 // import java.util.Arrays;
-
 // public class Solution {
 //     public int majorityElement(int[] nums) {
-//         Arrays.sort(nums);  // 对数组进行排序
-//         return nums[nums.length / 2];  // 返回中间元素
+//         Arrays.sort(nums);  // array nums
+//         return nums[nums.length / 2];  // return middle element
 //     }
 // }
 
+// re-write 2025/Feb/25
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
 
+// re-write 2025/Feb/26 - 1
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
+
+// re-write 2025/Feb/26 - 2
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length /2];
+//     }
+// }
+
+// re-write 2025/Feb/27 - 1
+// import java.utyil.Arrays;
+// public class Solution {
+//     public int majorityElement(int nums[]) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }}
+
+// re-write 2025/Feb/27 - 2
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
+
+// re-write 2025/Feb/27 - 3
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
+
+// re-write 2025/Feb/27 - 4
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
+
+// re-write 2025/Feb/27 - 5
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
+
+// re-write 2025/Feb/27 - 6
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
+
+// re-write 2025/Feb/27 - 7
+// import java.util.Arrays;
+// public class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }
 
 // # ------------------------------------------
-
-
 
 // # 189. Rotate Array
 // # Medium
@@ -372,8 +585,6 @@
 // # Companies
 // # Hint
 // # Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
-
- 
 
 // # Example 1:
 
@@ -390,7 +601,6 @@
 // # Explanation: 
 // # rotate 1 steps to the right: [99,-1,-100,3]
 // # rotate 2 steps to the right: [3,99,-1,-100]
- 
 
 // # Constraints:
 
