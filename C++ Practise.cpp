@@ -697,7 +697,7 @@
 
 // # Input: nums = [-1,-100,3,99], k = 2
 // # Output: [3,99,-1,-100]
-// # Explanation: 
+// # Explanation:
 // # rotate 1 steps to the right: [99,-1,-100,3]
 // # rotate 2 steps to the right: [3,99,-1,-100]
  
@@ -719,6 +719,55 @@
 //         std::rotate(nums.begin(), nums.end() - k, nums.end());
 //     }
 // };
+
+// re-write 2025/Feb/28 - 1
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     void rotate(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         k %= n; // if (k == 0) return; C++ dont need
+
+//         std::rotate(nums.begin(), nums.end() - k, nums.end()); // Generic Algorithm - std::rotate(start, new_begin, end); [nums.end() - k == nums.begin() + (nums.size() - k)]
+//     } 
+// };
+
+
+// re-write 2025/Feb/28 - 2
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     void rotate(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         k %= n;
+
+//         std::rotate(nums.begin(), nums.end() - k, nums.end());
+//     }
+// };
+
+// re-write 2025/Feb/28 - 3
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     void rotate(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         k %= n;
+
+//         std::rotate(nums.begin(), nums.end() - k, nums.end());
+//     }
+// };
+
+
+// # ------------------------------------------
 
 // # 121. Best Time to Buy and Sell Stock
 // # Easy
@@ -747,7 +796,6 @@
 
 // # 1 <= prices.length <= 105
 // # 0 <= prices[i] <= 104
-
 
 #include <vector>
 #include <algorithm>
