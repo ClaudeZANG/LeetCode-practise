@@ -708,7 +708,7 @@
 // # 0 <= k <= 105
 
 // #include <vector>
-// #include <algorithm> // 包含 std::rotate
+// #include <algorithm> // include std::rotate
 // #include <iostream>
 
 // class Solution {

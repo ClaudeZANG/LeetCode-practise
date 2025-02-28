@@ -611,18 +611,18 @@
 // public class Solution {
 //     public void rotate(int[] nums, int k) {
 //         int n = nums.length;
-//         k %= n; // 计算有效旋转步数
+//         k %= n; // valid rotate steps
 //         if (k == 0) return;
 
-//         // Step 1: 翻转整个数组
+//         // Step 1: rotate all nums
 //         reverse(nums, 0, n - 1);
-//         // Step 2: 翻转前 k 个元素
+//         // Step 2: rotate the first k elements
 //         reverse(nums, 0, k - 1);
-//         // Step 3: 翻转后 n-k 个元素
+//         // Step 3: rotate the n-k elements
 //         reverse(nums, k, n - 1);
 //     }
 
-//     // 定义 reverse 方法，用于翻转数组中从 start 到 end 的部分
+//     // def reverse method, to rotate start to end
 //     private void reverse(int[] nums, int start, int end) {
 //         while (start < end) {
 //             int temp = nums[start];
@@ -634,6 +634,51 @@
 //     }
 // }
 
+// re-write 2025/Feb/27 - 1
+// public class Solution {
+//     public void rotate(int[] nums, int k) {
+//         int n = nums.length;
+//         k %= n;
+//         if (k == 0) return;
+
+//         reverse(nums, 0, n - 1);
+//         reverse(nums, 0, k - 1);
+//         reverse(nums, k, n - 1);
+//     }
+
+//     private void reverse(int[] nums, int start, int end) {
+//         while (start < end) {
+//             int temp = nums[start];
+//             nums[start] = nums[end];
+//             nums[end] = temp;
+//             start++;
+//             end--;
+//         }
+//     }
+// }
+
+// re-write 2025/Feb/27 - 2
+// public class Solution {
+//     public void rotate(int[] nums, int k) {
+//         int n = nums.length;
+//         k %= n;
+//         if (k == 0) return;
+
+//         reverse(nums, 0, n - 1);
+//         reverse(nums, 0, k - 1);
+//         reverse(nums, k, n - 1);
+//     }
+
+//     private void reverse(int[] nums, int start, int end) {
+//         while (start < end) {
+//             int temp = nums[start];
+//             nums[start] = nums[end];
+//             nums[end] = temp;
+//             start++;
+//             end--;
+//         }
+//     }
+// }
 
 
 // # ------------------------------------------

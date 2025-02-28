@@ -503,9 +503,21 @@
 #         k %= n
 #         nums[:] = nums[-k:] + nums[:-k]
 
+# re-write 2025/Feb/27 - 1
+# class Solution(object):
+#     def rotate(self, nums, k):
+#         n = len(nums)
+#         k %= n
+#         nums[:] = nums[-k:] + nums[:-k]
+
+# re-write 2025/Feb/27 - 2
+# class Solution:
+#     def rotate(self, nums, k):
+#         n = len(nums)
+#         k %= n
+#         nums[:] = nums[-k:] + nums[:-k]
 
 # ---------------------------
-
 
 # 121. Best Time to Buy and Sell Stock
 # Easy
