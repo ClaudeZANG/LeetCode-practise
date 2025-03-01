@@ -779,19 +779,21 @@
 // # 1 <= prices.length <= 105
 // # 0 <= prices[i] <= 104
 
-class Solution {
-    public int maxProfit(int[] prices) {
-        int minPrice = Integer.MAX_VALUE;
-        int maxProfit = 0;
+// class Solution {
+//     public int maxProfit(int[] prices) {
+//         int minPrice = Integer.MAX_VALUE;
+//         int maxProfit = 0;
 
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minPrice) {
-                minPrice = prices[i];
-            }
-            if (maxProfit < prices[i] - minPrice) {
-                maxProfit = prices[i] - minPrice;
-            }
-        }
-        return maxProfit;
-    }
-}
+//         for (int i = 0; i < prices.length; i++) {
+//             if (prices[i] < minPrice) {
+//                 minPrice = prices[i];
+//             }
+//             else if (maxProfit < prices[i] - minPrice) {
+//                 maxProfit = prices[i] - minPrice;
+//             }
+//         }
+//         return maxProfit;
+//     }
+// }
+
+// re-write 2025/Feb/28 - 1
