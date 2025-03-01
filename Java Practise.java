@@ -796,4 +796,60 @@
 //     }
 // }
 
-// re-write 2025/Feb/28 - 1
+// re-write 2025/Mar/1 - 1
+// class Solution {
+//     public int maxProfit(int[] prices) {
+//         int minPrice = Integer.MAX_VALUE;
+//         int maxProfit = 0;
+
+//         for (int price : prices) {
+//             minPrice = Math.min(minPrice, price);
+//             maxProfit = Math.max(maxProfit, price - minPrice);
+//         }
+
+//         return maxProfit;
+//     }
+// }
+
+// re-write 2025/Mar/1 - 2
+// class Solution {
+//     public int maxProfit(int[] prices) {
+//         int minPrice = Integer.MAX_VALUE;
+//         int maxProfit = 0;
+
+//         for (int price : prices) {
+//             minPrice = Math.min(minPrice, price);
+//             maxProfit = Math.max(maxProfit, price - minPrice);
+//         }
+//         return maxProfit;
+//     }
+// }
+
+// re-write 2025/Mar/1 - 3
+// class Solution {
+//     public int maxProfit(int[] prices) {
+//         int minPrice = Integer.MAX_VALUE;
+//         int maxProfit = 0;
+
+//         for (int price : prices) {
+//             minPrice = Math.min(minPrice, price);
+//             maxProfit = Math.max(maxProfit, price - minPrice);
+//         }
+//         return maxProfit;
+//     }
+// }
+
+
+// re-write 2025/Mar/1 - 4
+class Solution {
+    public int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            minPrice = Math.min(minPrice, price);
+            maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+        return maxProfit;
+    }
+}

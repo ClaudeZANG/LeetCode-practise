@@ -829,3 +829,61 @@ public:
         return max_profit;
     }
 };
+
+
+// re-write 2025/Mar/1 - 1
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     int maxProfit(vector<int>& prices) {
+//         int min_price = INT_MAX;
+//         int max_profit = 0;
+
+//         for (int price : prices) {
+//             min_price = min(min_price, price);
+//             max_profit = max(max_profit, price - min_price);
+//         }
+//         return max_profit;
+//     }
+// };
+
+// re-write 2025/Mar/1 - 2
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     int maxProfit(vector<int>& prices) {
+//         int min_price = INT_MAX;
+//         int max_profit = 0;
+
+//         for (int price : prices) {
+//             min_price = min(min_price, price);
+//             max_profit = max(max_profit, price - min_price);
+//         }
+//         return max_profit;
+//     }
+// };
+
+// re-write 2025/Mar/1 - 3
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     int maxProfit(vector<int>& prices) {
+//         int min_price = INT_MAX;
+//         int max_profit = 0;
+
+//         for (int price : prices) {
+//             min_price = min(min_price, price);
+//             max_profit = max(max_profit, price - min_price);
+//         }
+//         return max_profit;
+//     }
+// };

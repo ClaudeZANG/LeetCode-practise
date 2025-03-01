@@ -36,6 +36,7 @@ class Solution {
 C++
 int main() { }
 // int argc, char* argv[]
+函数用maxProfit，变量用max_profit
 
 JavaScript!==和===表示严格相等，不会转换数据类型
 (i < k - 1 ? ", " : "") 三元运算符(条件 ? 值1 : 值2)

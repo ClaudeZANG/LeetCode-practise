@@ -684,19 +684,61 @@
 // # 1 <= prices.length <= 105
 // # 0 <= prices[i] <= 104
 
+// public class Solution {
+//     public int MaxProfit(int[] prices) {
+// 		int minPrice = int.MaxValue;
+// 		int maxProfit = 0;
+
+// 		for (int i = 0; i < prices.Length; i++) {
+// 			if (prices[i] < minPrice) {
+// 				minPrice = prices[i];
+// 			}
+// 			if (prices[i] - minPrice > maxProfit) {
+// 				maxProfit = prices[i] - minPrice;
+// 			}
+// 		}
+// 		return maxProfit;        
+//     }
+// }
+
 public class Solution {
     public int MaxProfit(int[] prices) {
+        int minPrice = int.MaxValue;
+        int maxProfit = 0;
+
+        foreach (int price in prices) {
+            minPrice = Math.Min(minPrice, price); // renew minPrice
+            maxProfit = Math.Max(maxProfit, price - minPrice); // calculate maxProfit
+        }
+
+        return maxProfit;
+    }
+}
+
+// re-write 2025/Mar/1 - 1
+// public class Solution {
+// 	public int MaxProfit(int[] prices) {
+// 		int minPrice = int.MaxValue;
+// 		int maxProfit = 0;
+
+// 		foreach (int price in prices) {
+// 			minPrice = Math.Min(minPrice, price);
+// 			maxProfit = Math.Max(maxProfit, price - minPrice);
+// 		}
+// 		return maxProfit;
+// 	}
+// }
+
+// re-write 2025/Mar/1 - 2
+public class Solution {
+	public int MaxProfit(int[] prices) {
 		int minPrice = int.MaxValue;
 		int maxProfit = 0;
 
-		for (int i = 0; i < prices.Length; i++) {
-			if (prices[i] < minPrice) {
-				minPrice = prices[i];
-			}
-			if (prices[i] - minPrice > maxProfit) {
-				maxProfit = prices[i] - minPrice;
-			}
+		foreach (int price in prices) {
+			minPrice = Math.Min(minPrice, price);
+			maxProfit = Math.Max(maxProfit, price - minPrice);
 		}
-		return maxProfit;        
-    }
+		return maxProfit;
+	}
 }

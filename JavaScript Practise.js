@@ -650,14 +650,38 @@
 // # 1 <= prices.length <= 105
 // # 0 <= prices[i] <= 104
 
-var maxProfit = function(prices) {
-    let minPrice = Infinity;
-    let maxProfit = 0;
+// var maxProfit = function(prices) {
+//     let minPrice = Infinity;
+//     let maxProfit = 0;
 
-    for (let price of prices) {
-        minPrice = Math.min(minPrice, price);
-        maxProfit = Math.max(maxProfit, price - minPrice);
-    }
+//     for (let price of prices) {
+//         minPrice = Math.min(minPrice, price);
+//         maxProfit = Math.max(maxProfit, price - minPrice);
+//     }
 
-    return maxProfit;
-};
+//     return maxProfit;
+// };
+
+// re-write 2025/Mar/1 - 1
+// var maxProfit = function(prices) {
+//     let minPrice = Infinity;
+//     let maxProfit = 0;
+
+//     for (let price of prices) {
+//         minPrice = Math.min(minPrice, price);
+//         maxProfit = Math.max(maxProfit, price - minPrice);
+//     }
+//     return maxProfit;
+// };
+
+// re-write 2025/Mar/1 - 2
+// var maxProfit = function(prices) {
+//     let minPrice = Infinity;
+//     let maxProfit = 0;
+
+//     for (let price of prices) {
+//         minPrice = Math.min(minPrice, price);
+//         maxProfit = Math.max(maxProfit, price - minPrice);
+//     }
+//     return maxProfit;
+// };
