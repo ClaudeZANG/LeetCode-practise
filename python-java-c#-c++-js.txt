@@ -37,3 +37,5 @@ JavaScript!==和===表示严格相等，不会转换数据类型
 (i < k - 1 ? ", " : "") 三元运算符(条件 ? 值1 : 值2)
 JavaScript按数值排序[1, 10, 2, 5]因此需要nums.sort((a, b) => a - b);
 JavaScript 没有 // 整除运算符，而是使用 Math.floor()
+arrow function will not be hoisting箭头函数不会被提升
+JavaScript: 变量赋值（const、let、var）的函数，结尾需要 ;

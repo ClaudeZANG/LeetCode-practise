@@ -559,7 +559,66 @@
 // };
 
 // re-write 2025/Feb/28 - 1
+// var rotate = function(nums, k) {
+//     let n = nums.length;
+//     k %= n;
 
+//     const reverse = (nums, start, end) => {
+//         while (start < end) {
+//             let temp = nums[start];
+//             nums[start] = nums[end];
+//             nums[end] = temp;
+//             start++;
+//             end--;
+//         }
+//     };
+
+//     reverse(nums, 0, n - 1);
+//     reverse(nums, 0, k - 1);
+//     reverse(nums, k, n - 1);
+// };
+
+// re-write 2025/Feb/28 - 2
+// var rotate = function(nums, k) {
+//     let n = nums.length;
+//     k %= n;
+//     if (k == 0) return;
+
+//     const reverse = (nums, start, end) => {
+//         while (start < end) {
+//             let temp = nums[start];
+//             nums[start] = nums[end];
+//             nums[end] = temp;
+//             start++;
+//             end--;
+//         }
+//     };
+
+//     reverse(nums, 0, n - 1);
+//     reverse(nums, 0, k - 1);
+//     reverse(nums, k, n - 1);
+// };
+
+// re-write 2025/Feb/28 - 3
+// var rotate = function(nums, k) {
+//     let n = nums.length;
+//     k %= n;
+//     if (k == 0) return;
+
+//     const reverse = (nums, start, end) => {
+//         while (start < end) {
+//             let temp = nums[start];
+//             nums[start] = nums[end];
+//             nums[end] = temp;
+//             start++;
+//             end--;
+//         }
+//     };
+
+//     reverse(nums, 0, n - 1);
+//     reverse(nums, 0, k - 1);
+//     reverse(nums, k, n - 1);
+// };
 
 // # ------------------------------------------
 

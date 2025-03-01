@@ -735,7 +735,6 @@
 //     } 
 // };
 
-
 // re-write 2025/Feb/28 - 2
 // #include <vector>
 // #include <algorithm>
@@ -766,6 +765,21 @@
 //     }
 // };
 
+// re-write 2025/Feb/28 - 4
+// #include <vector>
+// #include <algorithm>
+
+// using namespace std;
+// class Solution {
+//     public:
+//     void rotate(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         k %= n;
+//         if (k == 0) return;
+
+//         std::rotate(nums.begin(), nums.end() - k, nums.end());
+//     }
+// };
 
 // # ------------------------------------------
 
