@@ -844,4 +844,375 @@
 # 1 <= n <= 5000
 # 0 <= citations[i] <= 1000
 
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse=True)
+#         h = 0
 
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+        
+#         return h
+
+# re-write 2025/Mar/6 - 1
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+
+# re-write 2025/Mar/6 - 2
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+
+# re-write 2025/Mar/6 - 3
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+
+# re-write 2025/Mar/8 - 1
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+    
+# re-write 2025/Mar/8 - 2
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort()
+#         h = 0
+#         n = len(citations)
+
+#         for i, citation in enumerate(citations):
+#             if citation >= n - i:
+#                 h =  n - i
+#                 break
+#         return h
+
+# re-write 2025/Mar/8 - 3
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+
+
+# re-write 2025/Mar/8 - 4
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort()
+#         h = 0
+#         n = len(citations)
+
+#         for i, citation in enumerate(citations):
+#             if citation >= n - i:
+#                 h = n - i
+#                 break
+#         return h
+
+# re-write 2025/Mar/8 - 5
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+
+# re-write 2025/Mar/8 - 6
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort()
+#         h = 0
+#         n = len(citations)
+
+#         for i, citation in enumerate(citations):
+#             if citation >= n - i:
+#                 h = n - i
+#                 break
+#         return h
+
+# re-write 2025/Mar/8 - 7
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort(reverse = True)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= i + 1:
+#                 h = i + 1
+#             else:
+#                 break
+#         return h
+
+# re-write 2025/Mar/8 - 8
+# class Solution:
+#     def hIndex(self, citations):
+#         citations.sort()
+#         n = len(citations)
+#         h = 0
+
+#         for i, citation in enumerate(citations):
+#             if citation >= n - i:
+#                 h = n - i
+#                 break
+#         return h
+
+# -----------------------------------
+
+# 380. Insert Delete GetRandom O(1)
+# Medium # Topics # Companies
+
+# Implement the RandomizedSet class:
+# RandomizedSet() Initializes the RandomizedSet object.
+# bool insert(int val) Inserts an item val into the set if not present. Returns true if the item was not present, false otherwise.
+# bool remove(int val) Removes an item val from the set if present. Returns true if the item was present, false otherwise.
+# int getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.
+# You must implement the functions of the class such that each function works in average O(1) time complexity.
+
+# Example 1:
+# Input
+# ["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+# [[], [1], [2], [2], [], [1], [2], []]
+# Output
+# [null, true, false, true, 2, true, false, 2]
+
+# Explanation
+# RandomizedSet randomizedSet = new RandomizedSet();
+# randomizedSet.insert(1); // Inserts 1 to the set. Returns true as 1 was inserted successfully.
+# randomizedSet.remove(2); // Returns false as 2 does not exist in the set.
+# randomizedSet.insert(2); // Inserts 2 to the set, returns true. Set now contains [1,2].
+# randomizedSet.getRandom(); // getRandom() should return either 1 or 2 randomly.
+# randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
+# randomizedSet.insert(2); // 2 was already in the set, so return false.
+# randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
+
+# Constraints:
+# -231 <= val <= 231 - 1
+# At most 2 * 105 calls will be made to insert, remove, and getRandom.
+# There will be at least one element in the data structure when getRandom is called.
+
+# import random
+
+# class RandomizedSet:
+#     def __init__(self):
+#         self.list = []  # Stores all elements
+#         self.map = {}   # Maps value to its index in the list
+
+#     def insert(self, val: int) -> bool:
+#         """Insert an element into the set. Returns True if inserted, False if it already exists. O(1) complexity."""
+#         if val in self.map:
+#             return False
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+#         return True
+
+#     def remove(self, val: int) -> bool:
+#         """Remove an element from the set. Returns True if removed, False if not present. O(1) complexity."""
+#         if val not in self.map:
+#             return False
+        
+#         index = self.map[val]  # Get the index of the element to remove
+#         last_element = self.list[-1]  # Get the last element of the list
+
+#         # Swap the element to be removed with the last element
+#         self.list[index] = last_element
+#         self.map[last_element] = index  # Update the index of the last element in the map
+
+#         # Remove the last element from the list to maintain compactness
+#         self.list.pop()
+#         del self.map[val]
+
+#         return True
+
+#     def getRandom(self) -> int:
+#         """Return a random element from the set. O(1) complexity."""
+#         return random.choice(self.list)
+
+# re-write 2025/Mar/8 - 1
+# import random
+
+# class RandomizedSet:
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+#         return True
+
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.list.pop()
+
+#         self.map[last_element] = index
+#         del self.map[val]
+
+#         return True
+    
+#     def getRandom(self):
+#         return random.choice(self.list)
+
+# re-write 2025/Mar/9 - 1
+# import random
+
+# class Solution:
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+#         return True
+
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.map[last_element] = index
+
+#         self.list.pop()
+#         del self.map[val]
+
+#         return True
+    
+#     def getRandom(self):
+#         return random.choice(self.list)
+    
+# re-write 2025/Mar/9 - 2
+# import random
+# class Solution:  # class RandomizedSet()
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+        
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+        
+#         return True
+    
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+        
+#         '''
+#         [0: 0, 10: 1, 20: 2, 30: 3]
+#         remove val == 10
+
+#         1 = self.map[10]
+#         30 = self.list[-1]
+
+#         [0: 0, 30: 1, 20: 2, 30: 3]
+#         [0: 0, 10: 1, 20: 2, 30: 1]
+
+#         [0: 0, 30: 1, 20: 2]
+#         [0: 0, 20: 2, 30: 1]
+
+#         '''
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.map[last_element] = index
+
+#         self.list.pop()
+#         del self.map[val]
+
+#         return True
+    
+#     def getRandom(self):
+#         return random.choice(self.list)
+    
+# re-write 2025/Mar/9 - 3
+# import random
+# class Solution:
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+    
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+        
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+#         return True
+    
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+        
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.map[last_element] = index
+
+#         self.list.pop()
+#         del self.map[val]
+
+#         return True
+    
+#     def getRandom(self):
+#         return random.choice(self.list)

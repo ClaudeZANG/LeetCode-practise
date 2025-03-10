@@ -5,6 +5,8 @@ for i in range(1, len(nums)):
 float('inf')
 min_price = min(min_price, price)
 max_profit = max(max_profit, price - min_price)
+Java 允许 return 直接终止整个方法，所以可以在 for 循环里 return h
+Python 的 return 需要保证所有情况都覆盖，所以 for 里不能直接 return，必须先 break 退出循环，然后 return h
 
 java和C#很像
 Java不能一次声明多个变量
@@ -13,6 +15,7 @@ public static void main(String[] args) { }
 // String[] args
 Java - Arrays
 Integer.MAX_VALUE;
+int和integer的区别：int是基本数据类型（Primitive Type），integer是包装类（Wrapper Class）
 
 C#首字母要大写，命名法区别
 C#
