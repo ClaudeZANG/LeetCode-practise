@@ -1216,3 +1216,71 @@
     
 #     def getRandom(self):
 #         return random.choice(self.list)
+
+# re-write 2025/Mar/11 - 1
+# import random
+
+# class RandomizedSet():
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+        
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+
+#         return True
+    
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.map[last_element] = index
+
+#         self.list.pop()
+#         del self.map[val]
+
+#         return True
+    
+#     def getRandom(self):
+#         return random.choice(self.list)
+    
+# re-write 2025/Mar/11 - 2
+# import random
+
+# class RandomizedSet():
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+        
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+
+#         return True
+    
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+        
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.map[last_element] = index
+
+#         self.list.pop()
+#         del self.map[val]
+
+#         return True
+    
+#     def getRandom(self):
+#         return random.choice(self.list)
