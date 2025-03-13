@@ -1033,95 +1033,192 @@
 // # At most 2 * 105 calls will be made to insert, remove, and getRandom.
 // # There will be at least one element in the data structure when getRandom is called.
 
-using System;
-using System.Collections.Generic;
+// using System;
+// using System.Collections.Generic;
 
-public class RandomizedSet {
-    private List<int> list;
-    private Dictionary<int, int> map;
-    private Random rand;
+// public class RandomizedSet {
+//     private List<int> list;
+//     private Dictionary<int, int> map;
+//     private Random rand;
 
-    public RandomizedSet() {
-        list = new List<int>();
-        map = new Dictionary<int, int>();
-        rand = new Random();
-    }
+//     public RandomizedSet() {
+//         list = new List<int>();
+//         map = new Dictionary<int, int>();
+//         rand = new Random();
+//     }
 
-    public bool Insert(int val) {
-        if (map.ContainsKey(val)) {
-            return false;
-        }
+//     public bool Insert(int val) {
+//         if (map.ContainsKey(val)) {
+//             return false;
+//         }
 
-        map[val] = list.Count;
-        list.Add(val);
-        return true;
-    }
+//         map[val] = list.Count;
+//         list.Add(val);
+//         return true;
+//     }
 
-    public bool Remove(int val) {
-        if (!map.ContainsKey(val)) {
-            return false;
-        }
+//     public bool Remove(int val) {
+//         if (!map.ContainsKey(val)) {
+//             return false;
+//         }
 
-        int index = map[val];
-        int lastElement = list[list.Count - 1];
+//         int index = map[val];
+//         int lastElement = list[list.Count - 1];
 
-        list[index] = lastElement;
-        map[lastElement] = index;
+//         list[index] = lastElement;
+//         map[lastElement] = index;
 
-        list.RemoveAt(list.Count - 1);
-        map.Remove(val);
+//         list.RemoveAt(list.Count - 1);
+//         map.Remove(val);
 
-        return true;
-    }
+//         return true;
+//     }
 
-    public int GetRandom() {
-        return list[rand.Next(list.Count)];
-    }
-}
+//     public int GetRandom() {
+//         return list[rand.Next(list.Count)];
+//     }
+// }
 
-// # re-write 2025/Mar/11 - 1
-using System;
-using System.Collections.Generic;
+// # re-write 2025/Mar/12 - 1
+// using System;
+// using System.Collections.Generic;
 
-public class RandomizedSet {
-	private List<int> list;
-	private Dictionary<int, int> map;
-	private Random rand;
+// public class RandomizedSet {
+// 	private List<int> list;
+// 	private Dictionary<int, int> map;
+// 	private Random rand;
 
-	public RandomizedSet() {
-		list = new List<int>();
-		map = new Dictionary<int, int>();
-		rand = new Random();
-	}
+// 	public RandomizedSet() {
+// 		list = new List<int>();
+// 		map = new Dictionary<int, int>();
+// 		rand = new Random();
+// 	}
 
-	public bool Insert(int val) {
-		if (map.ContainsKey(val)) {
-			return false;
-		}
+// 	public bool Insert(int val) {
+// 		if (map.ContainsKey(val)) {
+// 			return false;
+// 		}
 
-		map[val] = list.Count;
-		list.Add(val);
-		return true;		
-	}
+// 		map[val] = list.Count;
+// 		list.Add(val);
 
-	public bool remove(int val) {
-		if (!map.ContainsKey(val)) {
-			return false;
-		}
+// 		return true;
+// 	}
 
-		int index = map[val];
-		int lastElement = list[list.Count - 1];
+// 	public bool Remove(int val) {
+// 		if (!map.ContainsKey(val)) {
+// 			return false;
+// 		}
 
-		list[index] = lastElement;
-		map[lastElement] = index;
+// 		int index = map[val];
+// 		int lastElement = list[list.Count - 1];
 
-		list.RemoveAt(list.Count - 1);
-		map.Remove(val);
+// 		list[index] = lastElement;
+// 		map[lastElement] = index;
 
-		return true;
-	}
+// 		list.RemoveAt(list.Count - 1);
+// 		map.Remove(val);
 
-	public int GetRandom() {
-		return list[rand.Next(list.Count)];
-	}
-}
+// 		return true;
+// 	}
+
+// 	public int GetRandom() {
+// 		return list[rand.Next(list.Count)];
+// 	}
+// }
+
+// # re-write 2025/Mar/12 - 2
+// using System;
+// using System.Collections.Generic;
+
+// public class RandomizedSet {
+// 	private List<int> list;
+// 	private Dictionary<int, int> map;
+// 	private Random rand;
+
+// 	public RandomizedSet() {
+// 		list = new List<int>();
+// 		map = new Dictionary<int, int>();
+// 		rand = new Random();
+// 	}
+
+// 	public bool Insert(int val) {
+// 		if (map.ContainKeys(val)) {
+// 			return false;
+// 		}
+
+// 		map[val] = list.Count;
+// 		list.Add(val);
+
+// 		return true;
+// 	}
+
+// 	public bool Remove(int val) {
+// 		if (!map.ContainKeys(val)) {
+// 			return false;
+// 		}
+
+// 		int index = map[val];
+// 		int lastElement = list[list.Count - 1];
+
+// 		list[index] = lastElement;
+// 		map[lastElement] = index;
+
+// 		list.RemoveAt(list.Count - 1);
+// 		map.Remove(val);
+
+// 		return true;
+// 	}
+
+// 	public int GetRandom() {
+// 		return list[rand.Next(list.Count)];
+// 	}
+// }
+
+// # re-write 2025/Mar/12 - 3
+// using System;
+// using System.Collections.Generic;
+
+// public class RandomizedSet {
+// 	private List<int> list;
+// 	private Dictionary<int, int> map;
+// 	private Random rand;
+
+// 	public RandomizedSet() {
+// 		list = new List<int>();
+// 		map = new Dictionary<int, int>();
+// 		rand = new Random();
+// 	}
+
+// 	public bool Insert(int val) {
+// 		if (map.ContainsKey(val)) {
+// 			return false;
+// 		}
+
+// 		map[val] = list.Count;
+// 		list.Add(val);
+
+// 		return true;
+// 	}
+
+// 	public bool Remove(int val) {
+// 		if (!map.ContainsKey(val)) {
+// 			return false;
+// 		}
+
+// 		int index = map[val];
+// 		int lastElement = list[list.Count - 1];
+
+// 		list[index] = lastElement;
+// 		map[lastElement] = index;
+
+// 		list.RemoveAt(list.Count - 1);
+// 		map.Remove(val);
+
+// 		return true;
+// 	}
+
+// 	public int GetRandom() {
+// 		return list[rand.Next(list.Count)];
+// 	}
+// }

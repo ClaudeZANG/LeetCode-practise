@@ -1325,48 +1325,190 @@
 // }
 
 // # re-write 2025/Mar/11 - 2
-import java.util.*;
+// import java.util.*;
 
-class RandomizedSet {
-    private List<Integer> list;
-    private Map<Integer, Integer> map;
-    private Random rand;
+// class RandomizedSet {
+//     private List<Integer> list;
+//     private Map<Integer, Integer> map;
+//     private Random rand;
 
-    public RandomizedSet() {
-        list = new ArrayList<>();
-        map = new HashMap<>();
-        rand = new Random();
-    }
+//     public RandomizedSet() {
+//         list = new ArrayList<>();
+//         map = new HashMap<>();
+//         rand = new Random();
+//     }
 
-    public boolean insert(int val) {
-        if (map.containsKey(val)) {
-            return false;
-        }
+//     public boolean insert(int val) {
+//         if (map.containsKey(val)) {
+//             return false;
+//         }
 
-        map.put(val, list.size());
-        list.add(val);
+//         map.put(val, list.size());
+//         list.add(val);
 
-        return true;
-    }
+//         return true;
+//     }
 
-    public boolean remove(int val) {
-        if (!map.containsKey(val)) {
-            return false;
-        }
+//     public boolean remove(int val) {
+//         if (!map.containsKey(val)) {
+//             return false;
+//         }
 
-        int index = map.get(val);
-        int lastElement = list.get(list.size() - 1);
+//         int index = map.get(val);
+//         int lastElement = list.get(list.size() - 1);
 
-        list.set(index, lastElement);
-        map.put(lastElement, index);
+//         list.set(index, lastElement);
+//         map.put(lastElement, index);
 
-        list.remove(list.size() - 1);
-        map.remove(val);
+//         list.remove(list.size() - 1);
+//         map.remove(val);
 
-        return true;
-    }
+//         return true;
+//     }
 
-    public int getRandom() {
-        return list.get(rand.nextInt(list.size()));
-    }
-}
+//     public int getRandom() {
+//         return list.get(rand.nextInt(list.size()));
+//     }
+// }
+
+// # re-write 2025/Mar/12 - 1
+// import java.util.*;
+
+// class RandomizedSet {
+//     private List<Integer> list;
+//     private Map<Integer, Integer> map;
+//     private Random rand;
+
+//     public RandomizedSet() {
+//         list = new ArrayList<>();
+//         map = new HashMap<>();
+//         rand = new Random();
+//     }
+
+//     public boolean insert(int val) {
+//         if (map.containsKey(val)) {
+//             return false;
+//         }
+
+//         map.put(val, list.size());
+//         list.add(val);
+
+//         return true;
+//     }
+
+//     public boolean remove(int val) {
+//         if (!map.containsKey(val)) {
+//             return false;
+//         }
+
+//         int index = map.get(val);
+//         int lastElement = list.get(list.size() - 1);
+
+//         list.set(index, lastElement);
+//         map.put(lastElement, index);
+
+//         list.remove(list.size() - 1);
+//         map.remove(val);
+
+//         return true;
+//     }
+
+//     public int getRandom() {
+//         return list.get(rand.nextInt(list.size()));
+//     }
+// }
+
+// # re-write 2025/Mar/12 - 2
+// import java.util.*;
+
+// class RandomizedSet {
+//     private List<Integer> list;
+//     private Map<Integer, Integer> map;
+//     private Random rand;
+
+//     public RandomizedSet() {
+//         list = new ArrayList<>();
+//         map = new HashMap<>();
+//         rand = new Random();
+//     }
+
+//     public boolean insert(int val) {
+//         if (map.containsKey(val)) {
+//             return false;
+//         }
+
+//         map.put(val, list.size());
+//         list.add(val);
+
+//         return true;
+//     }
+
+//     public boolean remove(int val) {
+//         if (!map.containsKey(val)) {
+//             return false;
+//         }
+
+//         int index = map.get(val);
+//         int lastElement = list.get(list.size() - 1);
+
+//         list.set(index, lastElement);
+//         map.put(lastElement, index);
+
+//         list.remove(list.size() - 1);
+//         map.remove(val);
+
+//         return true;
+//     }
+
+//     public int getRandom() {
+//         return list.get(rand.nextInt(list.size()));
+//     }
+// }
+
+
+// # re-write 2025/Mar/12 - 3
+// import java.util.*;
+
+// class RandomizedSet {
+//     private List<Integer> list;
+//     private Map<Integer, Integer> map;
+//     private Random rand;
+
+//     public RandomizedSet() {
+//         list = new ArrayList<>();
+//         map = new HashMap<>();
+//         rand = new Random();
+//     }
+
+//     public boolean insert(int val) {
+//         if (map.containsKey(val)) {
+//             return false;
+//         }
+
+//         map.put(val, list.size());
+//         list.add(val);
+
+//         return true;
+//     }
+
+//     public boolean remove(int val) {
+//         if (!map.containsKey(val)) {
+//             return false;
+//         }
+
+//         int index = map.get(val);
+//         int lastElement = list.get(list.size() - 1);
+
+//         list.set(index, lastElement);
+//         map.put(lastElement, index);
+
+//         list.remove(list.size() - 1);
+//         map.remove(val);
+
+//         return true;
+//     }
+
+//     public int getRandom() {
+//         return list.get(rand.nextInt(list.size()));
+//     }
+// }

@@ -811,24 +811,24 @@
 // # 1 <= prices.length <= 105
 // # 0 <= prices[i] <= 104
 
-#include <vector>
-#include <algorithm>
-using namespace std;
+// #include <vector>
+// #include <algorithm>
+// using namespace std;
 
-class Solution {
-public:
-    int maxProfit(vector<int>& prices) {
-        int min_price = INT_MAX;
-        int max_profit = 0;
+// class Solution {
+// public:
+//     int maxProfit(vector<int>& prices) {
+//         int min_price = INT_MAX;
+//         int max_profit = 0;
 
-        for (int price : prices) {
-            min_price = min(min_price, price);
-            max_profit = max(max_profit, price - min_price);
-        }
+//         for (int price : prices) {
+//             min_price = min(min_price, price);
+//             max_profit = max(max_profit, price - min_price);
+//         }
 
-        return max_profit;
-    }
-};
+//         return max_profit;
+//     }
+// };
 
 
 // re-write 2025/Mar/1 - 1
@@ -1205,3 +1205,102 @@ public:
 // # -231 <= val <= 231 - 1
 // # At most 2 * 105 calls will be made to insert, remove, and getRandom.
 // # There will be at least one element in the data structure when getRandom is called.
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <cstdlib>  // For rand()
+
+using namespace std;
+
+class RandomizedSet {
+private:
+    vector<int> list;  // Stores elements
+    unordered_map<int, int> map;  // Maps value to its index in the list
+
+public:
+    RandomizedSet() {
+        // Constructor, no additional initialization needed
+    }
+
+    bool insert(int val) {
+        if (map.find(val) != map.end()) {
+            return false;  // If val already exists, return false
+        }
+
+        map[val] = list.size();  // Store val's index in the map
+        list.push_back(val);  // Add val to the list
+        return true;
+    }
+
+    bool remove(int val) {
+        if (map.find(val) == map.end()) {
+            return false;  // If val does not exist, return false
+        }
+
+        int index = map[val];  // Get val's index
+        int lastElement = list.back();  // Get the last element in the list
+
+        list[index] = lastElement;  // Replace val with the last element
+        map[lastElement] = index;  // Update the index of the last element in the map
+
+        list.pop_back();  // Remove the last element from the list
+        map.erase(val);  // Remove val from the map
+
+        return true;
+    }
+
+    int getRandom() {
+        return list[rand() % list.size()];  // Generate a random index and return the corresponding element
+    }
+};
+
+// # re-write 2025/Mar/12 - 1
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <cstdlib>
+
+using namespace std;
+
+class RandomizedSet {
+private:
+    vector<int> list;
+    unordered_map<int, int> map;
+
+public:
+    RandomizedSet() {
+
+    }
+
+    bool insert(int val) {
+        if (map.find(val) != map.end()) {
+            return false;
+        }
+
+        map[val] = list.size();
+        list.push_back(val);
+        return true;
+    }
+
+    bool remove(int val) {
+        if (map.find(val) == map.end()) {
+            return false;
+        }
+
+        int index = map[val];
+        int lastElement = list.back();
+
+        list[index] = lastElement;
+        map[lastElement] = index;
+
+        list.pop_back();
+        map.erase(val);
+
+        return true;
+    }
+
+    int getRandom() {
+        return list[rand() % list.size()];
+    }
+};
