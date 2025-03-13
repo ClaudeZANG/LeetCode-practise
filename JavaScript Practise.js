@@ -1005,3 +1005,73 @@ class RandomizedSet {
         return this.list[randomIndex];
     }
 }
+
+// # re-write 2025/Mar/12 - 1
+// class RandomizedSet {
+//     constructor() {
+//         this.list = [];
+//         this.map = new Map();
+//     }
+
+//     insert(val) {
+//         if (this.map.has(val)) return false;
+
+//         this.map.set(val, this.list.length);
+//         this.list.push(val);
+//         return true;
+//     }
+
+//     remove(val) {
+//         if (!this.map.has(val)) return false;
+
+//         let index = this.map.get(val);
+//         let lastElement = this.list[this.list.length - 1];
+
+//         this.list[index] = lastElement;
+//         this.map.set(lastElement, index);
+
+//         this.list.pop();
+//         this.map.delete(val);
+//         return true;
+//     }
+
+//     getRandom() {
+//         let randomIndex = Math.floor(Math.random() * this.list.length);
+//         return this.list[randomIndex];
+//     }
+// }
+
+// # re-write 2025/Mar/12 - 2
+// class RandomizedSet {
+//     constructor() {
+//         this.list = [];
+//         this.map = new Map();
+//     }
+
+//     insert(val) {
+//         if (this.map.has(val)) return false;
+
+//         this.map.set(val, this.list.length);
+//         this.list.push(val);
+//         return true;
+//     }
+
+//     remove(val) {
+//         if (!this.map.has(val)) return false;
+        
+//         let index = this.map.get(val);
+//         let lastElement = this.list[this.list.length - 1];
+
+//         this.list[index] = lastElement;
+//         this.map.set(lastElement, index);
+
+//         this.list.pop();
+//         this.map.delete(val);
+//         return true;
+//     }
+
+//     getRandom() {
+//         let randomIndex = Math.floor(Math.random() * this.list.length);
+//         return this.list[randomIndex];
+//     }
+// }

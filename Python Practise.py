@@ -1315,38 +1315,114 @@
     
 #     def getRandom(self):
 #         return random.choice(self.list)
-    
+
 # re-write 2025/Mar/12 - 2
-import random
+# import random
 
-class RandomizedSet:
-    def __init__(self):
-        self.list = []
-        self.map = {}
+# class RandomizedSet:
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
 
-    def insert(self, val):
-        if val in self.map:
-            return False
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
         
-        self.map[val] = len(self.list)
-        self.list.append(val)
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
 
-        return True
+#         return True
     
-    def remove(self, val):
-        if val not in self.map:
-            return False
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
         
-        index = self.map[val]
-        last_element = self.list[-1]
+#         index = self.map[val]
+#         last_element = self.list[-1]
 
-        self.list[index] = last_element
-        self.map[last_element] = index
+#         self.list[index] = last_element
+#         self.map[last_element] = index
 
-        self.list.pop()
-        del self.map[val]
+#         self.list.pop()
+#         del self.map[val]
 
-        return True
+#         return True
     
-    def getRandom(self):
-        return random.choice(self.list)
+#     def getRandom(self):
+#         return random.choice(self.list)
+
+# re-write 2025/Mar/12 - 3
+# import random
+# class RandomizedSet:
+#     def __init__(self):
+#         self.list = []
+#         self.map = {}
+
+#     def insert(self, val):
+#         if val in self.map:
+#             return False
+        
+#         self.map[val] = len(self.list)
+#         self.list.append(val)
+#         return True
+    
+#     def remove(self, val):
+#         if val not in self.map:
+#             return False
+        
+#         index = self.map[val]
+#         last_element = self.list[-1]
+
+#         self.list[index] = last_element
+#         self.map[last_element] = index
+
+#         self.list.pop()
+#         del self.map[val]
+#         return True
+
+#     def getRandom(self):
+#         return random.choice(self.list)
+
+# -----------------------------------
+
+# 238. Product of Array Except Self
+# Medium # Topics # Companies
+
+# Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+# The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+# You must write an algorithm that runs in O(n) time and without using the division operation.
+
+# Example 1:
+# Input: nums = [1,2,3,4]
+# Output: [24,12,8,6]
+
+# Example 2:
+# Input: nums = [-1,1,0,-3,3]
+# Output: [0,0,9,0,0]
+
+# Constraints:
+# 2 <= nums.length <= 105
+# -30 <= nums[i] <= 30
+# The input is generated such that answer[i] is guaranteed to fit in a 32-bit integer.
+ 
+# Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)
+
+from typing import List
+
+def productExceptSelf(nums: List[int]) -> List[int]:
+    n = len(nums)
+    answer = [1] * n  # Initialize the answer array with 1s
+
+    # Step 1: Compute prefix product for each element (left to right)
+    prefix = 1
+    for i in range(n):
+        answer[i] = prefix
+        prefix *= nums[i]  # Update prefix product
+
+    # Step 2: Compute suffix product and multiply with prefix (right to left)
+    suffix = 1
+    for i in range(n - 1, -1, -1):
+        answer[i] *= suffix  # Multiply suffix with current answer
+        suffix *= nums[i]  # Update suffix product
+
+    return answer
