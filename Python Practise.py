@@ -571,6 +571,12 @@
 #         nums.sort()
 #         return nums[len(nums) // 2]
 
+# re-write 2025/Mar/14 - 1
+# class Solution:
+#     def majorityElement(self, nums):
+#         nums.sort()
+#         return nums[len(nums) // 2]
+
 # ------------------------------------------
 
 # 189. Rotate Array
@@ -654,6 +660,15 @@
 #             return
 #         nums[:] = nums[-k:] + nums[:-k]
 
+# re-write 2025/Mar/14 - 1
+# class Solution:
+#     def rotate(self, nums, k):
+#         n = len(nums)
+#         k %= n
+#         if k == 0:
+#             return
+#         nums[:] = nums[-k:] + nums[:-k]
+
 # ---------------------------
 
 # 121. Best Time to Buy and Sell Stock
@@ -728,6 +743,18 @@
 #         for price in prices:
 #             min_price = min(min_price, price)
 #             max_profit = max(max_profit, price - min_price)
+#         return max_profit
+
+# re-write 2025/Mar/13 - 2
+# class Solution:
+#     def maxProfit(self, prices):
+#         min_price, max_profit = float('inf'), 0
+#         for price in prices:
+#             min_price = min(min_price, price)
+#             max_profit = max(max_profit, price - min_price)
+#         return max_profit
+
+# re-write 2025/Mar/14 - 1
 
 # -----------------------------------
 
@@ -772,6 +799,9 @@
 # class Solution:
 #     def maxProfit(self, prices):
 #         return sum(max(prices[i] - prices[i - 1], 0) for i in range (1, len(prices)))
+
+# re-write 2025/Mar/13 - 1
+
 
 # -----------------------------------
 
